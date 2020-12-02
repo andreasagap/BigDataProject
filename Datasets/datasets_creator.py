@@ -10,7 +10,7 @@ def scaling(x, y):
         x[i] = (x[i] - np.min(x)) / (np.max(x) - np.min(x))
 
     return x, y
-def scaling(x, y,z):
+def scaling3d(x, y,z):
 
     for i in range(0, len(y)):
         y[i] = (y[i] - np.min(y)) / (np.max(y) - np.min(y))
@@ -35,7 +35,7 @@ def generate_correlated(n):
                [-0.8, 1., 0.9],
                [-0.8, 0.9, 1.]]
         x, y,z = np.random.multivariate_normal(mean, cov, 1000).T
-        x, y,z = scaling(x, y,z)
+        x, y,z = scaling3d(x, y,z)
         f = open("correlated" + str(n) + ".txt", "a")
         for x1, y1,z1 in zip(x, y,z):
             f.write(str(x1) + "," + str(y1) + "," + str(z1) + "\n")
@@ -45,7 +45,20 @@ def generate_correlated(n):
         ax.scatter3D(x, y, z, c=z, cmap='Greens')
         plt.show()
     elif n == 5:
-        print("AFTER")
+        mean = [0, 0, 0,0,0]
+        cov = [[1., -0.8, -0.8,-0.7,0.68],
+               [-0.8, 1., 0.9,0.8,-0.6],
+               [-0.8, 0.9, 1.,0.7,-0.7],
+               [-0.7, 0.8, 0.7,1.,-0.7],
+               [0.68, -0.6, -0.7,-0.7,1]]
+        x, y, z,a,b = np.random.multivariate_normal(mean, cov, 1000).T
+        a, b = scaling(a, b)
+        x, y,z = scaling3d(x, y,z)
+        f = open("correlated" + str(n) + ".txt", "a")
+        for x1, y1, z1,a1,b1 in zip(x, y, z,a,b):
+            f.write(str(x1) + "," + str(y1) + "," + str(z1) + "," + str(a1) + "," + str(b1)+ "\n")
+        f.close()
+
 
 
 
@@ -66,4 +79,4 @@ if __name__ == '__main__':
     # generate_uniform([0.0, 0.0], [1.0, 1.0], 2)
     # generate_uniform([0.0, 0.0, 0.0], [1.0, 1.0, 1.0], 3)
     # generate_uniform([0.0, 0.0, 0.0, 0.0, 0.0], [1.0, 1.0, 1.0, 1.0, 1.0], 5)
-    generate_correlated(3)
+    generate_correlated(5)
