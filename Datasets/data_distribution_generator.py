@@ -64,8 +64,8 @@ def write_array_to_txt(arr, fname):
 
 
 if __name__ == '__main__':
-    d_type = 'correlated'
-    dim = 5
+    d_type = 'uniform'
+    dim = 3
     n_samples = 5000
 
     distribution = generate_distribution(dim, d_type, n_samples)
