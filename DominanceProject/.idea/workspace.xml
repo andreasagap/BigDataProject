@@ -7,6 +7,7 @@
     <list default="true" id="8e9add5b-e00b-465d-af65-e30ffe05065e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/scala/TaskOne.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/TaskOne.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/TaskOne$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/TaskOne$.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -86,13 +87,21 @@
       <option name="project" value="LOCAL" />
       <updated>1608675645413</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Dataframe Index">
+      <created>1608677454657</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1608677454657</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Dataframe Dim" />
-    <option name="LAST_COMMIT_MESSAGE" value="Dataframe Dim" />
+    <MESSAGE value="Dataframe Index" />
+    <option name="LAST_COMMIT_MESSAGE" value="Dataframe Index" />
   </component>
   <component name="WindowStateProjectService">
     <state x="701" y="167" key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog" timestamp="1607280862607">
@@ -111,33 +120,33 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="503" y="254" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1536.824/1920.0.1600.860@0.0.1536.824" timestamp="1607375563805" />
-    <state x="324" y="0" key="CommitChangelistDialog2" timestamp="1608675644386">
+    <state x="324" y="0" key="CommitChangelistDialog2" timestamp="1608677453852">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="324" y="0" key="CommitChangelistDialog2/0.0.1536.824/1920.0.1600.860@0.0.1536.824" timestamp="1608675644386" />
-    <state width="1493" height="210" key="GridCell.Tab.0.bottom" timestamp="1608415039470">
+    <state x="324" y="0" key="CommitChangelistDialog2/0.0.1536.824/1920.0.1600.860@0.0.1536.824" timestamp="1608677453852" />
+    <state width="1493" height="273" key="GridCell.Tab.0.bottom" timestamp="1608678412742">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824/1920.0.1600.860@0.0.1536.824" timestamp="1608415039470" />
-    <state width="1493" height="210" key="GridCell.Tab.0.center" timestamp="1608415039470">
+    <state width="1493" height="273" key="GridCell.Tab.0.bottom/0.0.1536.824/1920.0.1600.860@0.0.1536.824" timestamp="1608678412742" />
+    <state width="1493" height="273" key="GridCell.Tab.0.center" timestamp="1608678412742">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.center/0.0.1536.824/1920.0.1600.860@0.0.1536.824" timestamp="1608415039470" />
-    <state width="1493" height="210" key="GridCell.Tab.0.left" timestamp="1608415039470">
+    <state width="1493" height="273" key="GridCell.Tab.0.center/0.0.1536.824/1920.0.1600.860@0.0.1536.824" timestamp="1608678412742" />
+    <state width="1493" height="273" key="GridCell.Tab.0.left" timestamp="1608678412742">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.left/0.0.1536.824/1920.0.1600.860@0.0.1536.824" timestamp="1608415039470" />
-    <state width="1493" height="210" key="GridCell.Tab.0.right" timestamp="1608415039470">
+    <state width="1493" height="273" key="GridCell.Tab.0.left/0.0.1536.824/1920.0.1600.860@0.0.1536.824" timestamp="1608678412742" />
+    <state width="1493" height="273" key="GridCell.Tab.0.right" timestamp="1608678412742">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.right/0.0.1536.824/1920.0.1600.860@0.0.1536.824" timestamp="1608415039470" />
+    <state width="1493" height="273" key="GridCell.Tab.0.right/0.0.1536.824/1920.0.1600.860@0.0.1536.824" timestamp="1608678412742" />
     <state x="277" y="57" key="SettingsEditor" timestamp="1607453300671">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="277" y="57" key="SettingsEditor/0.0.1536.824/1920.0.1600.860@0.0.1536.824" timestamp="1607453300671" />
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1608675662588">
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1608677456407">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824/1920.0.1600.860@0.0.1536.824" timestamp="1608675662588" />
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824/1920.0.1600.860@0.0.1536.824" timestamp="1608677456407" />
   </component>
 </project>

@@ -33,13 +33,47 @@ object TaskOne {
     }
     return flag
   }
-  def SFSkylineCalculation(dataframe: DataFrame,dimensions: Int,ss: SparkSession):DataFrame = {
+
+  def convertRowToArrayOfPoints(row: Row, dimensions: Int):Array[Double] = {
+    var array_dims_row : Array[Double] = Array()
+    for( w <- 0 until dimensions)
+    {
+      array_dims_row = array_dims_row :+ row(w).asInstanceOf[Double]
+    }
+
+
+    return array_dims_row
+  }
+
+
+  def SFSkylineCalculation(df: DataFrame, dimensions: Int, ss: SparkSession):DataFrame = {
+    var dataframe = df
     import ss.implicits._
 
 
-//    dataframe.foreach { row =>
-//      row
-//    }
+    dataframe.foreach { row => {
+      var isSkyline = true
+      val array_dims_row = convertRowToArrayOfPoints(row, dimensions)
+      dataframe.filter(dataframe.col("R") === 1).foreach(skylineRow => {
+
+          val array_dims_skylineRow = convertRowToArrayOfPoints(skylineRow, dimensions)
+          if (isDominated(array_dims_row, array_dims_skylineRow)) {
+
+            dataframe = dataframe.withColumn("R", when($"row_index" === row(dimensions + 1), lit(0)).when($"R" === 1, lit(1)).otherwise(0))
+
+          }
+          else if (isDominated(array_dims_skylineRow, array_dims_row)) {
+            isSkyline = false
+            return dataframe
+          }
+        }
+      )
+      if (isSkyline) {
+        dataframe = dataframe.withColumn("R", when($"row_index" === row(dimensions + 1), lit(1)).when($"R" === 1, lit(1)).otherwise(0))
+      }
+    }
+
+    }
     return dataframe
   }
 
@@ -67,5 +101,8 @@ object TaskOne {
     result.show(4)
     val mainMemorySkylines = SFSkylineCalculation(result,dimensions,ss)
     mainMemorySkylines.take(2).foreach(println)
+    result.foreach { row =>
+      println(row(dimensions+1))
+    }
   }
 }
