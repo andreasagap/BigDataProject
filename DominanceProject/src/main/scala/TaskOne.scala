@@ -1,7 +1,7 @@
 import org.apache.log4j.{Level, Logger}
 import org.apache.spark.SparkContext
 import org.apache.spark.sql.{DataFrame, Row, SparkSession}
-import org.apache.spark.sql.functions.{col, desc, lit, size, when}
+import org.apache.spark.sql.functions.{col, desc, lit, monotonically_increasing_id, size, when}
 
 import scala.collection.mutable
 import scala.collection.mutable.ArrayBuffer
@@ -33,14 +33,16 @@ object TaskOne {
     }
     return flag
   }
-  def SFSkylineCalculation(dataframe: DataFrame,dimensions: Int):DataFrame = {
+  def SFSkylineCalculation(dataframe: DataFrame,dimensions: Int,ss: SparkSession):DataFrame = {
+    import ss.implicits._
 
-//    dataframe.first().select("R",when(dataframe.first().)
+
 //    dataframe.foreach { row =>
 //      row
 //    }
     return dataframe
   }
+
 
   def main(args : Array[String]): Unit ={
     Logger.getRootLogger.setLevel(Level.INFO)
@@ -57,12 +59,13 @@ object TaskOne {
     var result = newDf.select((0 until dimensions).map(i => $"points"(i).as(s"dim_$i")): _*)
 
     result = result.withColumn("SUM", result.columns.map(c => col(c)).reduce((c1, c2) => c1 + c2))
-    result = result.sort(desc("SUM"))
+      .sort(desc("SUM"))
 
-    result = result.withColumn("R", lit(0))
+    result = result.withColumn("row_index", monotonically_increasing_id())
+      .withColumn("R", when($"row_index" === 0, lit(1)).otherwise(0))
     //result = result.withColumn("T", lit(0))
     result.show(4)
-    val mainMemorySkylines = SFSkylineCalculation(result,dimensions)
+    val mainMemorySkylines = SFSkylineCalculation(result,dimensions,ss)
     mainMemorySkylines.take(2).foreach(println)
   }
 }
