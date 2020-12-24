@@ -1,12 +1,13 @@
 import org.apache.log4j.{Level, Logger}
 import org.apache.spark.SparkContext
 import org.apache.spark.sql.{DataFrame, Row, SparkSession}
-import org.apache.spark.sql.functions.{col, desc, lit, monotonically_increasing_id, size, when}
+import org.apache.spark.sql.functions.{array, col, desc, lit, monotonically_increasing_id, row_number, size, when}
 
 import scala.collection.mutable
 import scala.collection.mutable.ArrayBuffer
 import scala.math.BigDecimal.int2bigDecimal
-object TaskOne {
+import scala.util.control.Breaks.break
+object TaskOne extends Serializable {
 
   def isDominated(x: Array[Double], y:Array[Double]): Boolean = {
     return isSmaller(x,y) & isSmallerEqual(x,y)
@@ -46,35 +47,34 @@ object TaskOne {
   }
 
 
-  def SFSkylineCalculation(df: DataFrame, dimensions: Int, ss: SparkSession):DataFrame = {
-    var dataframe = df
-    import ss.implicits._
+  def SFSkylineCalculation(points: Array[Array[Double]]):ArrayBuffer[Array[Double]] = {
 
-
-    dataframe.foreach { row => {
-      var isSkyline = true
-      val array_dims_row = convertRowToArrayOfPoints(row, dimensions)
-      dataframe.filter(dataframe.col("R") === 1).foreach(skylineRow => {
-
-          val array_dims_skylineRow = convertRowToArrayOfPoints(skylineRow, dimensions)
-          if (isDominated(array_dims_row, array_dims_skylineRow)) {
-
-            dataframe = dataframe.withColumn("R", when($"row_index" === row(dimensions + 1), lit(0)).when($"R" === 1, lit(1)).otherwise(0))
+      var skyline = ArrayBuffer[Array[Double]]()
+      skyline+=points(0)
+      points.foreach { row => {
+        var isSkyline = true
+        var j=0
+        while (j < skyline.length) {
+          if (isDominated(row, skyline(j))) {
+            skyline.remove(j)
+            j-=1
 
           }
-          else if (isDominated(array_dims_skylineRow, array_dims_row)) {
+          else if (isDominated(skyline(j), row)) {
             isSkyline = false
-            return dataframe
+            break()
           }
+          j += 1
         }
-      )
-      if (isSkyline) {
-        dataframe = dataframe.withColumn("R", when($"row_index" === row(dimensions + 1), lit(1)).when($"R" === 1, lit(1)).otherwise(0))
+        if (isSkyline) {
+          skyline+=row
+        }
       }
-    }
 
     }
-    return dataframe
+
+
+    return skyline
   }
 
 
@@ -99,10 +99,14 @@ object TaskOne {
       .withColumn("R", when($"row_index" === 0, lit(1)).otherwise(0))
     //result = result.withColumn("T", lit(0))
     result.show(4)
-    val mainMemorySkylines = SFSkylineCalculation(result,dimensions,ss)
-    mainMemorySkylines.take(2).foreach(println)
-    result.foreach { row =>
-      println(row(dimensions+1))
+
+    val skyline =
+      SFSkylineCalculation(result.map(row=> convertRowToArrayOfPoints(row, dimensions)).collect())
+
+   // skyline.foreach { println }
+    for (row <- skyline) {
+     // row.foreach { println }
+      println(row.mkString(","))
     }
   }
 }
