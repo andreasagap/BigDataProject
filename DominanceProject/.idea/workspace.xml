@@ -6,21 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="8e9add5b-e00b-465d-af65-e30ffe05065e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/target/config-classes/$42a14566ffcbc22f4431$.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/target/config-classes/$42a14566ffcbc22f4431.cache" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/target/config-classes/$42a14566ffcbc22f4431.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/target/config-classes/$81f92e64b20d6d671361$.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/target/config-classes/$81f92e64b20d6d671361.cache" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/target/config-classes/$81f92e64b20d6d671361.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/target/config-classes/$a4981cd3609f01ccbb06$.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/target/config-classes/$a4981cd3609f01ccbb06.cache" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/target/config-classes/$a4981cd3609f01ccbb06.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/target/config-classes/$a809ac2de5d9c509387f$.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/target/config-classes/$a809ac2de5d9c509387f.cache" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/target/config-classes/$a809ac2de5d9c509387f.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/target/config-classes/$ee91e87473286b98f810$.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/target/config-classes/$ee91e87473286b98f810.cache" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/target/config-classes/$ee91e87473286b98f810.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.sbt" beforeDir="false" afterPath="$PROJECT_DIR$/build.sbt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project/target/scala-2.12/sbt-1.0/update/update_cache_2.12/inputs" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/scala-2.12/sbt-1.0/update/update_cache_2.12/inputs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project/target/scala-2.12/sbt-1.0/update/update_cache_2.12/output" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/scala-2.12/sbt-1.0/update/update_cache_2.12/output" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project/target/streams/_global/dependencyPositions/_global/streams/update_cache_2.12/input_dsp" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/streams/_global/dependencyPositions/_global/streams/update_cache_2.12/input_dsp" afterDir="false" />
@@ -35,6 +21,10 @@
       <change beforePath="$PROJECT_DIR$/src/main/scala/TaskOne.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/TaskOne.scala" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/TaskOne$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/TaskOne$.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/TaskOne.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/TaskOne.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.12/update/update_cache_2.12/output" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/update/update_cache_2.12/output" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/streams/_global/_global/csrLogger/_global/streams/out" beforeDir="false" afterPath="$PROJECT_DIR$/target/streams/_global/_global/csrLogger/_global/streams/out" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/streams/_global/update/_global/streams/out" beforeDir="false" afterPath="$PROJECT_DIR$/target/streams/_global/update/_global/streams/out" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/streams/_global/updateClassifiers/_global/streams/update_cache_2.12/output" beforeDir="false" afterPath="$PROJECT_DIR$/target/streams/_global/updateClassifiers/_global/streams/update_cache_2.12/output" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -128,24 +118,36 @@
       <option name="project" value="LOCAL" />
       <updated>1608680183890</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Dataframe was wrong">
+      <created>1608768300865</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1608768300865</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Dataframe Dim" />
     <MESSAGE value="Dataframe Index" />
-    <option name="LAST_COMMIT_MESSAGE" value="Dataframe Index" />
+    <MESSAGE value="Dataframe was wrong" />
+    <option name="LAST_COMMIT_MESSAGE" value="Dataframe was wrong" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="701" y="167" key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog" timestamp="1607280862607">
+    <state x="701" y="167" key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog" timestamp="1608813112043">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="701" y="167" key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog/0.0.1536.824/1920.0.1600.860@0.0.1536.824" timestamp="1607280862607" />
-    <state x="153" y="91" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1607281148613">
+    <state x="701" y="167" key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog/0.0.1536.824/1920.0.1600.860@0.0.1536.824" timestamp="1608813112043" />
+    <state x="153" y="91" width="1089" height="713" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1608813969114">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="153" y="91" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824/1920.0.1600.860@0.0.1536.824" timestamp="1607281148613" />
+    <state x="153" y="91" width="1089" height="713" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824/1920.0.1600.860@0.0.1536.824" timestamp="1608813969114" />
+    <state x="428" y="238" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1608813965524">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="428" y="238" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1536.824/1920.0.1600.860@0.0.1536.824" timestamp="1608813965524" />
     <state x="449" y="148" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1608414301436">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -154,58 +156,73 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="503" y="254" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1536.824/1920.0.1600.860@0.0.1536.824" timestamp="1607375563805" />
-    <state x="324" y="0" key="CommitChangelistDialog2" timestamp="1608680183015">
+    <state x="324" y="0" key="CommitChangelistDialog2" timestamp="1608768299535">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="324" y="0" key="CommitChangelistDialog2/0.0.1536.824/1920.0.1600.860@0.0.1536.824" timestamp="1608680183015" />
-    <state width="1493" height="290" key="GridCell.Tab.0.bottom" timestamp="1608767990803">
+    <state x="324" y="0" key="CommitChangelistDialog2/0.0.1536.824/1920.0.1600.860@0.0.1536.824" timestamp="1608768299535" />
+    <state width="1493" height="264" key="GridCell.Tab.0.bottom" timestamp="1608817277906">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="290" key="GridCell.Tab.0.bottom/0.0.1536.824/1920.0.1600.860@0.0.1536.824" timestamp="1608767990803" />
-    <state width="1493" height="290" key="GridCell.Tab.0.center" timestamp="1608767990803">
+    <state width="1493" height="264" key="GridCell.Tab.0.bottom/0.0.1536.824/1920.0.1600.860@0.0.1536.824" timestamp="1608817277906" />
+    <state width="1493" height="264" key="GridCell.Tab.0.center" timestamp="1608817277906">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="290" key="GridCell.Tab.0.center/0.0.1536.824/1920.0.1600.860@0.0.1536.824" timestamp="1608767990803" />
-    <state width="1493" height="290" key="GridCell.Tab.0.left" timestamp="1608767990803">
+    <state width="1493" height="264" key="GridCell.Tab.0.center/0.0.1536.824/1920.0.1600.860@0.0.1536.824" timestamp="1608817277906" />
+    <state width="1493" height="264" key="GridCell.Tab.0.left" timestamp="1608817277906">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="290" key="GridCell.Tab.0.left/0.0.1536.824/1920.0.1600.860@0.0.1536.824" timestamp="1608767990803" />
-    <state width="1493" height="290" key="GridCell.Tab.0.right" timestamp="1608767990803">
+    <state width="1493" height="264" key="GridCell.Tab.0.left/0.0.1536.824/1920.0.1600.860@0.0.1536.824" timestamp="1608817277906" />
+    <state width="1493" height="264" key="GridCell.Tab.0.right" timestamp="1608817277906">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="290" key="GridCell.Tab.0.right/0.0.1536.824/1920.0.1600.860@0.0.1536.824" timestamp="1608767990803" />
-    <state width="1493" height="261" key="GridCell.Tab.1.bottom" timestamp="1608767922352">
+    <state width="1493" height="264" key="GridCell.Tab.0.right/0.0.1536.824/1920.0.1600.860@0.0.1536.824" timestamp="1608817277906" />
+    <state width="1493" height="206" key="GridCell.Tab.1.bottom" timestamp="1608812435298">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="261" key="GridCell.Tab.1.bottom/0.0.1536.824/1920.0.1600.860@0.0.1536.824" timestamp="1608767922352" />
-    <state width="1493" height="261" key="GridCell.Tab.1.center" timestamp="1608767922352">
+    <state width="1493" height="206" key="GridCell.Tab.1.bottom/0.0.1536.824/1920.0.1600.860@0.0.1536.824" timestamp="1608812435298" />
+    <state width="1493" height="206" key="GridCell.Tab.1.center" timestamp="1608812435298">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="261" key="GridCell.Tab.1.center/0.0.1536.824/1920.0.1600.860@0.0.1536.824" timestamp="1608767922352" />
-    <state width="1493" height="261" key="GridCell.Tab.1.left" timestamp="1608767922352">
+    <state width="1493" height="206" key="GridCell.Tab.1.center/0.0.1536.824/1920.0.1600.860@0.0.1536.824" timestamp="1608812435298" />
+    <state width="1493" height="206" key="GridCell.Tab.1.left" timestamp="1608812435298">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="261" key="GridCell.Tab.1.left/0.0.1536.824/1920.0.1600.860@0.0.1536.824" timestamp="1608767922352" />
-    <state width="1493" height="261" key="GridCell.Tab.1.right" timestamp="1608767922352">
+    <state width="1493" height="206" key="GridCell.Tab.1.left/0.0.1536.824/1920.0.1600.860@0.0.1536.824" timestamp="1608812435298" />
+    <state width="1493" height="206" key="GridCell.Tab.1.right" timestamp="1608812435298">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="261" key="GridCell.Tab.1.right/0.0.1536.824/1920.0.1600.860@0.0.1536.824" timestamp="1608767922352" />
+    <state width="1493" height="206" key="GridCell.Tab.1.right/0.0.1536.824/1920.0.1600.860@0.0.1536.824" timestamp="1608812435298" />
     <state x="277" y="57" key="SettingsEditor" timestamp="1607453300671">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="277" y="57" key="SettingsEditor/0.0.1536.824/1920.0.1600.860@0.0.1536.824" timestamp="1607453300671" />
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1608680185218">
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1608768302675">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824/1920.0.1600.860@0.0.1536.824" timestamp="1608680185218" />
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824/1920.0.1600.860@0.0.1536.824" timestamp="1608768302675" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="scala-line">
           <url>file://$PROJECT_DIR$/src/main/scala/TaskOne.scala</url>
-          <line>79</line>
-          <option name="timeStamp" value="13" />
+          <line>16</line>
+          <option name="timeStamp" value="14" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="scala-line">
+          <url>file://$PROJECT_DIR$/src/main/scala/TaskOne.scala</url>
+          <line>19</line>
+          <option name="timeStamp" value="15" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="scala-line">
+          <url>file://$PROJECT_DIR$/src/main/scala/TaskOne.scala</url>
+          <line>15</line>
+          <option name="timeStamp" value="16" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="scala-line">
+          <url>file://$PROJECT_DIR$/src/main/scala/TaskOne.scala</url>
+          <line>22</line>
+          <option name="timeStamp" value="17" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
