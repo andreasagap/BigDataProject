@@ -1,5 +1,6 @@
-import org.apache.spark.sql.{DataFrame, SparkSession}
-import org.apache.spark.sql.functions.{count, desc, lit, monotonically_increasing_id, sum}
+import org.apache.spark.sql.expressions.Window
+import org.apache.spark.sql.{DataFrame, Row, SparkSession}
+import org.apache.spark.sql.functions.{col, count, desc, lit, monotonically_increasing_id, sum}
 
 import scala.collection.mutable
 
@@ -14,7 +15,6 @@ class TaskTwo extends Serializable{
     val df2 = pointsDF.withColumnRenamed("value", "pointsRow2")
     val df_2 = df2.select("*").withColumn("id", monotonically_increasing_id())
     import ss.implicits._
-//    val sqlContext = ss.sqlContext
 //    df_1.createOrReplaceTempView("df_1")
 //    df_2.createOrReplaceTempView("df_2")
     val df =
@@ -46,14 +46,30 @@ class TaskTwo extends Serializable{
 
     //
 //
-    val dominanceDF = comparisonDataframe
-      .filter($"key" notEqual  "-").withColumn("value", lit(1)).groupBy("key")
-  .agg(sum("value"))
+
+
+    val finaldf = comparisonDataframe
+      .filter($"key" notEqual  "-")
+      .groupBy("key", "point")
+      .count()
+      .sort(desc("count"))
+//      .where("count > 1")
+//      .count()
+//      .where("count > 1")
+
+
+
+//      .groupBy("key", "point")
+//      .count()
+//      .sort(desc("count"))
+
+//    .groupBy("key","point")
+//  .count().sort(desc("count"))
     //      .count()
 //      .sort(desc("count"))
 
-    dominanceDF.show(5)
-    return pointsDF
+    finaldf.show(5)
+    return finaldf
   }
 
 }

@@ -8,7 +8,7 @@ import scala.collection.mutable
 object Main extends Serializable{
 
   def main(args : Array[String]): Unit = {
-    //Logger.getLogger("org").setLevel(Level.OFF)
+    Logger.getLogger("org").setLevel(Level.OFF)
     //Logger.getLogger("akka").setLevel(Level.OFF)
     // val path = "C:\\\\Users\\\\Andreas\\\\Desktop\\\\BigDataProject\\\\Datasets\\\\uniform_dim_2_nsamples_5000.txt"
     val path = "C:\\\\Users\\\\Andreas\\\\Desktop\\\\BigDataProject\\\\Datasets\\\\uniform_dim_2_nsamples_5000.txt"
