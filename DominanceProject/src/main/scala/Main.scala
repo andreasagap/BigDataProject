@@ -8,7 +8,8 @@ import scala.collection.mutable
 object Main extends Serializable{
 
   def main(args : Array[String]): Unit = {
-    //Logger.getRootLogger.setLevel(Level.INFO)
+    //Logger.getLogger("org").setLevel(Level.OFF)
+    //Logger.getLogger("akka").setLevel(Level.OFF)
     // val path = "C:\\\\Users\\\\Andreas\\\\Desktop\\\\BigDataProject\\\\Datasets\\\\uniform_dim_2_nsamples_5000.txt"
     val path = "C:\\\\Users\\\\Andreas\\\\Desktop\\\\BigDataProject\\\\Datasets\\\\uniform_dim_2_nsamples_5000.txt"
     val sc = new SparkContext("local[2]", "DominanceProject")
@@ -22,9 +23,11 @@ object Main extends Serializable{
     val result = tuple._1
     val dimensions = tuple._2
 
-    val pointsDF = result.map(row => utils.convertRowToArrayOfPoints(row, dimensions));
-    pointsDF.show()
-    val skylineDF = task1.start(pointsDF.collect())
+    val pointsDF = result.map(row => utils.convertRowToArrayOfPoints(row, dimensions))
+//    val skylinePartitions = pointsDF.mapPartitions(task1.start);
+//    val skylineDF = task1.start(skylinePartitions.collect().toIterator)
+//    task1.printResult(skylineDF.toArray)
+
     val scoreDominanceDF = task2.start(pointsDF.toDF(),ss)
     scoreDominanceDF.show(10)
   }

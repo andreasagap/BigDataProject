@@ -12,12 +12,12 @@ class TaskOne extends Serializable{
   def init(): Unit ={
 
   }
-  def start(points: Array[Array[Double]]):ArrayBuffer[Array[Double]] = {
-
+  def start(points: Iterator[Array[Double]]):Iterator[Array[Double]] = {
+      val pointsArray = points.toArray
       val calculator = new DominanceCalculator()
       var skyline = ArrayBuffer[Array[Double]]()
-      skyline+=points(0)
-      points.foreach { row => {
+      skyline+=pointsArray(0)
+    pointsArray.foreach { row => {
         var isSkyline = true
         var j=0
         while (j < skyline.length) {
@@ -39,11 +39,11 @@ class TaskOne extends Serializable{
 
     }
 
-    printResult(skyline)
-    return skyline
+
+    return skyline.toIterator
   }
 
-  def printResult(skyline:ArrayBuffer[Array[Double]]): Unit ={
+  def printResult(skyline:Array[Array[Double]]): Unit ={
     for (row <- skyline) {
       // row.foreach { println }
       println(row.mkString(","))
