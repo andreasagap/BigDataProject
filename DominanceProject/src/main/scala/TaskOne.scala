@@ -40,14 +40,17 @@ class TaskOne extends Serializable{
     }
 
 
-    return skyline.toIterator
+    skyline.toIterator
   }
 
-  def printResult(skyline:Array[Array[Double]]): Unit ={
+  def printResult(skyline:Array[Array[Double]]): Array[Array[Double]] ={
+    println("-------------------Skyline points-------------------")
+    var array :Array[Array[Double]] = Array()
     for (row <- skyline) {
-      // row.foreach { println }
       println(row.mkString(","))
+      array :+= row
     }
+    array
   }
 
 

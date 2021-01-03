@@ -15,8 +15,7 @@ class TaskTwo extends Serializable{
     val df2 = pointsDF.withColumnRenamed("value", "pointsRow2")
     val df_2 = df2.select("*").withColumn("id", monotonically_increasing_id())
     import ss.implicits._
-//    df_1.createOrReplaceTempView("df_1")
-//    df_2.createOrReplaceTempView("df_2")
+
     val df =
       df_1.as("df1").crossJoin(
         df_2.as("df2")
@@ -40,7 +39,7 @@ class TaskTwo extends Serializable{
       } else if (id == 2){
         key = row.get(3).toString
       }
-      Tuple1(dominant._1._1, key)
+      Tuple1(dominant._1._1.mkString(","), key)
 
     }).select($"_1._1".as("point"), $"_1._2".as("key"))
 
@@ -69,7 +68,7 @@ class TaskTwo extends Serializable{
 //      .sort(desc("count"))
 
     finaldf.show(5)
-    return finaldf
+    finaldf
   }
 
 }
