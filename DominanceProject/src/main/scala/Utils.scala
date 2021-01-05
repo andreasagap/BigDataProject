@@ -1,7 +1,6 @@
 import org.apache.spark.SparkContext
 import org.apache.spark.sql.{DataFrame, Row, SparkSession}
 import org.apache.spark.sql.functions.{col, desc}
-import task2_grid.isDominated
 
 import scala.collection.mutable
 import scala.collection.mutable.ArrayBuffer
@@ -166,12 +165,13 @@ class Utils extends Serializable{
 
   def compute_dominance_score(point: Array[Double], cid : Int, candicateList: List[(Any, Any)]): Int = {
     var count = 0
+    val calculator = new DominanceCalculator()
     candicateList.foreach(tup =>{
       val p = tup._1.asInstanceOf[mutable.WrappedArray[Double]].toArray
       val cell2 = tup._2.asInstanceOf[String]
       val cell = cell2.toInt
       if(cell>= cid && dominated_partial(cid.toString, cell.toString)){
-        if(isDominated(point, p)){
+        if(calculator.isDominatedTask1(point, p)){
           count +=1
         }
       }

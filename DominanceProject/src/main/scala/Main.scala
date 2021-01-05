@@ -13,8 +13,8 @@ object Main extends Serializable {
     Logger.getLogger("org").setLevel(Level.OFF)
     val topK = 5
     //Logger.getLogger("akka").setLevel(Level.OFF)
-    // val path = "C:\\\\Users\\\\Andreas\\\\Desktop\\\\BigDataProject\\\\Datasets\\\\uniform_dim_2_nsamples_5000.txt"
-    val path = "uniform_dim_2_nsamples_5000.txt"
+     val path = "C:\\\\Users\\\\Andreas\\\\Desktop\\\\BigDataProject\\\\Datasets\\\\uniform_dim_2_nsamples_5000.txt"
+    //val path = "uniform_dim_2_nsamples_5000.txt"
     val sc = new SparkContext("local[2]", "DominanceProject")
     val ss = SparkSession.builder().appName("DataSet Test")
       .master("local[2]").getOrCreate()
