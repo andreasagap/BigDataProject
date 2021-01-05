@@ -4,15 +4,14 @@ import org.apache.spark.sql.{DataFrame, SparkSession}
 
 import scala.collection.mutable
 
-
 class TaskThree extends Serializable{
 
 
   def start(skylineArray:Array[Array[Double]],pointsDF: DataFrame,ss: SparkSession,k:Int) {
 
-    val calculator = new DominanceCalculator()
-
     import ss.implicits._
+
+    val calculator = new DominanceCalculator()
     val skylineDF = skylineArray.toSeq.toDF("point")
 
     val skylineCount = skylineDF.union(pointsDF)

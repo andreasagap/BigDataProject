@@ -7,6 +7,7 @@ import org.apache.spark.sql.functions.{array, col, concat_ws, count, desc, explo
 import scala.collection.mutable
 import scala.collection.mutable.ArrayBuffer
 import scala.util.control.Breaks.break
+
 class TaskOne extends Serializable{
 
   def init(): Unit ={

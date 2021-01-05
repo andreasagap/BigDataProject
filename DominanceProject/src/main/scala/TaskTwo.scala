@@ -8,13 +8,14 @@ class TaskTwo extends Serializable{
 
 
   def start(pointsDF: DataFrame, ss: SparkSession): DataFrame ={
+    import ss.implicits._
+
     val calculator = new DominanceCalculator()
     val df1 = pointsDF.withColumnRenamed("value", "pointsRow1")
     val df_1 = df1.select("*").withColumn("id", monotonically_increasing_id())
 
     val df2 = pointsDF.withColumnRenamed("value", "pointsRow2")
     val df_2 = df2.select("*").withColumn("id", monotonically_increasing_id())
-    import ss.implicits._
 
     val df =
       df_1.as("df1").crossJoin(
