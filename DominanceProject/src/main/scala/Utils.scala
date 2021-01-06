@@ -21,7 +21,7 @@ class Utils extends Serializable{
 
     result = result.withColumn("SUM", result.columns.map(c => col(c)).reduce((c1, c2) => c1 + c2))
       .sort(desc("SUM"))
-    return (result,dimensions)
+    (result,dimensions)
   }
 
   def convertRowToArrayOfPoints(row: Row, dimensions: Int):Array[Double] = {
@@ -32,7 +32,7 @@ class Utils extends Serializable{
     }
 
 
-    return array_dims_row
+    array_dims_row
   }
 
 

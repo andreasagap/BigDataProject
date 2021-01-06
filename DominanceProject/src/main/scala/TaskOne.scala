@@ -17,6 +17,10 @@ class TaskOne extends Serializable{
       val pointsArray = points.toArray
       val calculator = new DominanceCalculator()
       var skyline = ArrayBuffer[Array[Double]]()
+      if(pointsArray.length == 0){
+        return Iterator.empty
+      }
+
       skyline+=pointsArray(0)
     pointsArray.foreach { row => {
         var isSkyline = true

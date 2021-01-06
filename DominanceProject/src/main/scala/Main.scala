@@ -13,7 +13,7 @@ object Main extends Serializable {
     Logger.getLogger("org").setLevel(Level.OFF)
     val topK = 5
     //Logger.getLogger("akka").setLevel(Level.OFF)
-     val path = "C:\\\\Users\\\\Andreas\\\\Desktop\\\\BigDataProject\\\\Datasets\\\\uniform_dim_2_nsamples_5000.txt"
+     val path = "C:\\\\Users\\\\Andreas\\\\Desktop\\\\BigDataProject\\\\Datasets\\\\anticorrelated_dim_2_nsamples_5000.txt"
     //val path = "uniform_dim_2_nsamples_5000.txt"
     val sc = new SparkContext("local[2]", "DominanceProject")
     val ss = SparkSession.builder().appName("DataSet Test")
@@ -30,8 +30,12 @@ object Main extends Serializable {
     val dimensions = tuple._2
     val startSkyline = System.nanoTime()
     val pointsDF = result.map(row => utils.convertRowToArrayOfPoints(row, dimensions))
-    val skylinePartitions = pointsDF.mapPartitions(task1.start);
-    val skylineDF = task1.start(skylinePartitions.collect().toIterator)
+    val rdd3 = pointsDF.coalesce(5)
+    println("Repartition size : "+rdd3.rdd.partitions.size)
+    val skylinePartitions = rdd3.mapPartitions(task1.start).collect().toIterator
+
+
+    val skylineDF = task1.start(skylinePartitions)
     val arraySkyline = task1.printResult(skylineDF.toArray)
     val endSkyline = System.nanoTime()
 
