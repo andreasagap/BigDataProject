@@ -12,7 +12,7 @@ class TaskTwoGrid extends Serializable{
 
   }
 
-  def start(pointsDF: Dataset[Array[Double]],ss: SparkSession, dimensions: Int, k: Int, utils: Utils): Unit ={
+  def start(pointsDF: Dataset[Array[Double]],ss: SparkSession, dimensions: Int, k: Int, utils: Utils): Array[Row] ={
 
     import ss.implicits._
 
@@ -34,7 +34,7 @@ class TaskTwoGrid extends Serializable{
 
 
     val count_map = finaldf.select($"grid_id", $"count".cast("int")).as[(String, Int)].collect.toMap
-    println(count_map.toString())
+   // println(count_map.toString())
 
 
     val bounds_df = finaldf.map(row => {
@@ -49,14 +49,14 @@ class TaskTwoGrid extends Serializable{
     val pruned_grid = bounds_df.filter(bounds_df("gf") < k)
     pruned_grid.show()
 
-    val gf_map = pruned_grid.select($"g_id".cast("String"), $"gf").as[(String, Int)].collect.toMap
-    println(gf_map.toString())
+   // val gf_map = pruned_grid.select($"g_id".cast("String"), $"gf").as[(String, Int)].collect.toMap
+   // println(gf_map.toString())
 
     val low_map = pruned_grid.select($"g_id".cast("String"), $"lower").as[(String, Int)].collect.toMap
-    println(low_map.toString())
+   // println(low_map.toString())
 
     val cells_after_prunning = pruned_grid.select("g_id").rdd.map(r => r(0)).collect()
-    println(cells_after_prunning.mkString(" "))
+    //println(cells_after_prunning.mkString(" "))
 
     val listOfPrunnedCells = cells_after_prunning.toList
 
@@ -84,9 +84,7 @@ class TaskTwoGrid extends Serializable{
       res
     }).select($"_1".as("point"), $"_2".as("cell_id"), $"_3".as("score"))
 
-    dominanceDf.show()
-
-    dominanceDf.sort(desc("_3")).limit(10).show()
+    dominanceDf.sort(desc("_3")).limit(10).collect()
 
   }
 

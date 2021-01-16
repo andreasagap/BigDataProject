@@ -14,8 +14,8 @@ object Main extends Serializable {
     Logger.getLogger("org").setLevel(Level.OFF)
     val topK = 5
     //Logger.getLogger("akka").setLevel(Level.OFF)
-    var listPath = Array("anticorrelated_dim_2_nsamples_5000.txt", "anticorrelated_dim_3_nsamples_5000.txt",
-      "anticorrelated_dim_5_nsamples_5000.txt")// "anticorrelated_dim_10_nsamples_5000.txt")
+    val listPath = Array("anticorrelated_dim_2_nsamples_5000.txt", "anticorrelated_dim_3_nsamples_5000.txt",
+      "anticorrelated_dim_5_nsamples_5000.txt", "anticorrelated_dim_5_nsamples_100000.txt")
     val sc = new SparkContext("local[2]", "DominanceProject")
     val ss = SparkSession.builder().appName("DataSet Test").master("local[2]").getOrCreate()
 
@@ -34,17 +34,18 @@ object Main extends Serializable {
       val startSkyline = System.nanoTime()
       val pointsDF = result.map(row => utils.convertRowToArrayOfPoints(row, dimensions))
       val rdd3 = pointsDF.coalesce(5)
-      println("Repartition size : "+rdd3.rdd.partitions.size)
+//      println("Repartition size : "+rdd3.rdd.partitions.size)
       val skylinePartitions = rdd3.mapPartitions(task1.start).collect().toIterator
 
 
       val skylineDF = task1.start(skylinePartitions)
       val arraySkyline = task1.printResult(skylineDF.toArray)
       val endSkyline = System.nanoTime()
-      val fw = new FileWriter("results_"+pathSplitArray(0)+".txt", true)
+      val fw = new FileWriter("Task1results_"+pathSplitArray(0)+".txt", true)
 
       try {
-        fw.write("Dims: "+pathSplitArray(2) + " Samples: " + pathSplitArray(4).split(".")(0)+"\n")
+        fw.write("Dims: "+pathSplitArray(2) + " Samples: " + pathSplitArray(4).split('.')(0)+"\n")
+        fw.write("Size skyline: "+ arraySkyline.length+"\n")
         fw.write("Time: " + TimeUnit.SECONDS.convert(endSkyline - startSkyline, TimeUnit.NANOSECONDS) + "s\n")
         fw.write("---------Skyline points---------\n")
         for (row <- arraySkyline) {
@@ -54,6 +55,28 @@ object Main extends Serializable {
       }
       finally fw.close()
       println("Time to find skyline: " + TimeUnit.SECONDS.convert(endSkyline - startSkyline, TimeUnit.NANOSECONDS) + "s")
+
+
+
+      val fwtask2 = new FileWriter("Task2results_"+pathSplitArray(0)+".txt", true)
+
+      fwtask2.write("-------------------TASK 2(GRID)-------------------\n")
+      val startTask2 = System.nanoTime()
+      val dominanceTopKArray = task2grid.start(pointsDF, ss, dimensions, topK, utils)
+      val endTask2 = System.nanoTime()
+      try {
+        fwtask2.write("Dims: "+pathSplitArray(2) + " Samples: " + pathSplitArray(4).split('.')(0)+"\n")
+        fwtask2.write("Time to find Top-K Dominant: " + TimeUnit.SECONDS.convert(endTask2 - startTask2, TimeUnit.NANOSECONDS) + "s\n")
+        dominanceTopKArray.foreach(row=>{
+          print(row)
+          fwtask2.write("Point: "+row.get(0) + ", Score: " + row.get(2)+"\n")
+        })
+
+        fwtask2.write("---------End---------\n")
+      }
+      finally fwtask2.close()
+
+
     }
 
     //val path = "uniform_dim_2_nsamples_5000.txt"
@@ -73,11 +96,6 @@ object Main extends Serializable {
     //      .save("/dominance.csv")
     //task3.start(skylineDF.toArray,scoreDominanceDF,ss)
 
-//    println("-------------------TASK 2(GRID)-------------------")
-//    val startTask2 = System.nanoTime()
-//    task2grid.start(pointsDF, ss, dimensions, topK, utils)
-//    val endTask2 = System.nanoTime()
-//    println("Time to find Top-K Dominant: " + TimeUnit.SECONDS.convert(endTask2 - startTask2, TimeUnit.NANOSECONDS) + "s")
 
 
 
