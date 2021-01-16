@@ -22,7 +22,7 @@ class TaskTwoGrid extends Serializable{
 
     }).select($"_1._1".as("point"), $"_1._2".as("grid_id"))
 
-    grid_df.show()
+    //grid_df.show()
 
 
     val finaldf = grid_df
@@ -30,7 +30,7 @@ class TaskTwoGrid extends Serializable{
       .count()
       .sort(desc("count"))
 
-    finaldf.show()
+   // finaldf.show()
 
 
     val count_map = finaldf.select($"grid_id", $"count".cast("int")).as[(String, Int)].collect.toMap
@@ -47,10 +47,10 @@ class TaskTwoGrid extends Serializable{
 //    bounds_df.show()
 
     val pruned_grid = bounds_df.filter(bounds_df("gf") < k)
-    pruned_grid.show()
+   // pruned_grid.show()
 
     val deleted_cells = bounds_df.filter(bounds_df("gf") >= k)
-    deleted_cells.show()
+    //deleted_cells.show()
 
     val deleted_points_df = deleted_cells.map(row =>{
       val cid = row(0).toString
@@ -58,10 +58,10 @@ class TaskTwoGrid extends Serializable{
       (cid, count)
     }).select($"_1".as("cell_id"), $"_2".as("count"))
 
-    deleted_points_df.show()
+   // deleted_points_df.show()
 
     val count_deleted_points = deleted_points_df.select(col("count")).rdd.map(_(0).asInstanceOf[Int]).reduce(_+_)
-    print(count_deleted_points)
+    //print(count_deleted_points)
 
 
     // val gf_map = pruned_grid.select($"g_id".cast("String"), $"gf").as[(String, Int)].collect.toMap

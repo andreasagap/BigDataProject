@@ -1,13 +1,13 @@
 import org.apache.spark.SparkContext
 import org.apache.spark.sql.functions.{desc, monotonically_increasing_id}
-import org.apache.spark.sql.{DataFrame, SparkSession}
+import org.apache.spark.sql.{DataFrame, Row, SparkSession}
 
 import scala.collection.mutable
 
 class TaskThree extends Serializable{
 
 
-  def start(skylineArray:Array[Array[Double]],pointsDF: DataFrame,ss: SparkSession,k:Int, utils: Utils) {
+  def start(skylineArray:Array[Array[Double]],pointsDF: DataFrame,ss: SparkSession,k:Int, utils: Utils): Array[Row] ={
 
     import ss.implicits._
 
@@ -74,9 +74,9 @@ class TaskThree extends Serializable{
     val finaldf = dominanceDf
           .sort(desc("score"))
 
-
     finaldf.show(k)
 
+    finaldf.take(k)
   }
 
 }

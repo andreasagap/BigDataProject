@@ -24,8 +24,8 @@ object Main extends Serializable {
     val topK = 5
     //Logger.getLogger("akka").setLevel(Level.OFF)
 
-    val listPath = getListOfFiles("Datasets/FinalDatasets/" ).map(_.getName).toList
-    print(listPath)
+    val listPath = getListOfFiles("../Datasets/FinalDatasets/" ).map(_.getName)
+   // print(listPath)
     val sc = new SparkContext("local[2]", "DominanceProject")
     val ss = SparkSession.builder().appName("DataSet Test").master("local[2]").getOrCreate()
 
@@ -42,7 +42,7 @@ object Main extends Serializable {
 
       val pathSplitArray = pathTxt.split("_")
 
-      val path = "Datasets/FinalDatasets/" + pathTxt
+      val path = "../Datasets/FinalDatasets/" + pathTxt
       val tuple = utils.preprocessing(sc, path, ss)
       val result = tuple._1
       val dimensions = tuple._2
@@ -75,13 +75,13 @@ object Main extends Serializable {
 
       val fwtask2 = new FileWriter("Task2results_"+pathSplitArray(0)+".txt", true)
 
-      fwtask2.write("-------------------TASK 2(GRID)-------------------\n")
       val startTask2 = System.nanoTime()
       val task2_results = task2grid.start(pointsDF, ss, dimensions, topK, utils)
       val dominanceTopKArray = task2_results._1._1
       val deletedPointsCount = task2_results._1._2
       val endTask2 = System.nanoTime()
       try {
+        fwtask2.write("-------------------TASK 2(GRID)-------------------\n")
         fwtask2.write("Dims: "+pathSplitArray(2) + " Samples: " + pathSplitArray(4).split('.')(0)+"\n")
         fwtask2.write("Time to find Top-K Dominant: " + TimeUnit.SECONDS.convert(endTask2 - startTask2, TimeUnit.NANOSECONDS) + "s\n")
         dominanceTopKArray.foreach(row=>{
@@ -94,14 +94,25 @@ object Main extends Serializable {
       finally fwtask2.close()
 
 
+      val fwtask3 = new FileWriter("Task3results_"+pathSplitArray(0)+".txt", true)
+
+        val startTask3=System.nanoTime()
+        val task3_results = task3.start(arraySkyline,pointsDF.toDF(),ss,topK,utils)
+        val endTask3=System.nanoTime()
+      try {
+        fwtask3.write("----------TASK 3----------\n")
+
+        task3_results.foreach(row=>{
+          fwtask3.write("Point: "+row.get(0) + ", Score: " + row.get(1)+"\n")
+        })
+        fwtask3.write("Time to find Top-K Skyline: "+TimeUnit.SECONDS.convert(endTask3-startTask3,TimeUnit.NANOSECONDS)+"s")
+      }
+      finally fwtask3.close()
     }
 
+
+    // Brute force for Task 2 to check the results of our implementation
     //val path = "uniform_dim_2_nsamples_5000.txt"
-
-
-
-
-
     //    val startDominance = System.nanoTime()
     //    val scoreDominanceDF = task2.start(pointsDF.toDF(),ss)
     //    //scoreDominanceDF.show(10)
@@ -116,11 +127,7 @@ object Main extends Serializable {
 
 
 
-//    println("-------------------TASK 3-------------------")
-//    val startTask3=System.nanoTime()
-//    task3.start(arraySkyline,pointsDF.toDF(),ss,topK,utils)
-//    val endTask3=System.nanoTime()
-//    println("Time to find Top-K Skyline: "+TimeUnit.SECONDS.convert(endTask3-startTask3,TimeUnit.NANOSECONDS)+"s")
+
 
   }
 }
