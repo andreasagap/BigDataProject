@@ -5,12 +5,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8e9add5b-e00b-465d-af65-e30ffe05065e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/scala/TaskThree.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Datasets/anticorrelated_dim_2_nsamples_5000.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Datasets/anticorrelated_dim_3_nsamples_5000.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Datasets/anticorrelated_dim_5_nsamples_100000.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Datasets/anticorrelated_dim_5_nsamples_5000.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Datasets/correlated_dim_2_nsamples_5000.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Datasets/correlated_dim_3_nsamples_5000.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Datasets/correlated_dim_5_nsamples_5000.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Datasets/data_distribution_generator.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Datasets/normal_dim_2_nsamples_5000.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Datasets/normal_dim_3_nsamples_5000.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Datasets/normal_dim_5_nsamples_5000.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Datasets/uniform_dim_2_nsamples_5000.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Datasets/uniform_dim_3_nsamples_5000.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Datasets/uniform_dim_5_nsamples_5000.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/scala/Main.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/Main.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/TaskOne.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/TaskOne.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/TaskTwo.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/TaskTwo.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/TaskOne.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/TaskOne.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/TaskThree.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/TaskThree.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/Utils.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/Utils.scala" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -155,7 +166,14 @@
       <option name="project" value="LOCAL" />
       <updated>1609075269404</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Arg not working">
+      <created>1610816731622</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1610816731622</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -191,10 +209,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="503" y="254" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1536.824/1920.0.1600.860@0.0.1536.824" timestamp="1607375563805" />
-    <state x="324" y="0" key="CommitChangelistDialog2" timestamp="1609075267420">
+    <state x="324" y="0" key="CommitChangelistDialog2" timestamp="1610816730427">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="324" y="0" key="CommitChangelistDialog2/0.0.1536.824/1920.0.1600.860@0.0.1536.824" timestamp="1609060273872" />
+    <state x="324" y="0" key="CommitChangelistDialog2/0.0.1536.824/1920.0.1600.860@0.0.1536.824" timestamp="1610816730427" />
     <state x="2258" y="0" key="CommitChangelistDialog2/0.0.1536.824/1920.0.1600.860@1920.0.1600.860" timestamp="1608897033119" />
     <state x="324" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1609075267420" />
     <state width="1493" height="264" key="GridCell.Tab.0.bottom" timestamp="1609707149305">
@@ -245,16 +263,20 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="277" y="57" key="SettingsEditor/0.0.1536.824/1920.0.1600.860@0.0.1536.824" timestamp="1607453300671" />
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1609075271201">
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1610816734342">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824/1920.0.1600.860@0.0.1536.824" timestamp="1609060386850" />
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824/1920.0.1600.860@0.0.1536.824" timestamp="1610816734342" />
     <state x="2296" y="151" key="Vcs.Push.Dialog.v2/0.0.1536.824/1920.0.1600.860@1920.0.1600.860" timestamp="1608897036122" />
     <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1609075271201" />
-    <state x="592" y="330" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1609017810278">
+    <state x="93" y="93" width="1350" height="638" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1610817139865">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="592" y="330" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.824/1920.0.1600.860@0.0.1536.824" timestamp="1609017810278" />
+    <state x="93" y="93" width="1350" height="638" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1536.824/1920.0.1600.860@0.0.1536.824" timestamp="1610817139865" />
+    <state x="592" y="330" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1610816802278">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="592" y="330" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.824/1920.0.1600.860@0.0.1536.824" timestamp="1610816802278" />
     <state x="2537" y="344" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.824/1920.0.1600.860@1920.0.1600.860" timestamp="1608889944562" />
     <state x="2153" y="-12" width="983" height="519" maximized="true" key="dock-window-1" timestamp="1609704493403">
       <screen x="1920" y="0" width="1600" height="860" />

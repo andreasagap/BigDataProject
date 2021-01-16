@@ -179,4 +179,19 @@ class Utils extends Serializable{
     count
   }
 
+  def skyline_dominance_score(point: Array[Double], candicateList: List[(Double, Double)]): Int = {
+    var count = 0
+    val calculator = new DominanceCalculator()
+    candicateList.foreach(tup =>{
+//      val p = tup._1.asInstanceOf[mutable.WrappedArray[Double]].toArray
+      val p = tup.productIterator.toArray
+      val cp = p.map(_.toString.toDouble)
+
+      if(calculator.isDominatedTask1(point, cp)){
+          count +=1
+        }
+    })
+    count
+  }
+
 }
