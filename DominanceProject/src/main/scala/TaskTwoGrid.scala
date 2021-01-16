@@ -12,7 +12,7 @@ class TaskTwoGrid extends Serializable{
 
   }
 
-  def start(pointsDF: Dataset[Array[Double]],ss: SparkSession, dimensions: Int, k: Int, utils: Utils): Array[Row] ={
+  def start(pointsDF: Dataset[Array[Double]],ss: SparkSession, dimensions: Int, k: Int, utils: Utils): Tuple1[(Array[Row], Int)] ={
 
     import ss.implicits._
 
@@ -44,12 +44,27 @@ class TaskTwoGrid extends Serializable{
     }).select($"_1._1".as("g_id"), $"_1._2"(0).as("lower"), $"_1._2"(1).as("upper"), $"_1._2"(2).as("gf"))
 
 
-    bounds_df.show()
+//    bounds_df.show()
 
     val pruned_grid = bounds_df.filter(bounds_df("gf") < k)
     pruned_grid.show()
 
-   // val gf_map = pruned_grid.select($"g_id".cast("String"), $"gf").as[(String, Int)].collect.toMap
+    val deleted_cells = bounds_df.filter(bounds_df("gf") >= k)
+    deleted_cells.show()
+
+    val deleted_points_df = deleted_cells.map(row =>{
+      val cid = row(0).toString
+      val count = count_map.getOrElse(cid, 0)
+      (cid, count)
+    }).select($"_1".as("cell_id"), $"_2".as("count"))
+
+    deleted_points_df.show()
+
+    val count_deleted_points = deleted_points_df.select(col("count")).rdd.map(_(0).asInstanceOf[Int]).reduce(_+_)
+    print(count_deleted_points)
+
+
+    // val gf_map = pruned_grid.select($"g_id".cast("String"), $"gf").as[(String, Int)].collect.toMap
    // println(gf_map.toString())
 
     val low_map = pruned_grid.select($"g_id".cast("String"), $"lower").as[(String, Int)].collect.toMap
@@ -61,11 +76,11 @@ class TaskTwoGrid extends Serializable{
     val listOfPrunnedCells = cells_after_prunning.toList
 
     val candidatePoints = grid_df.filter(grid_df("grid_id").isin(listOfPrunnedCells:_*))
-    candidatePoints.show()
+//    candidatePoints.show()
 
     val candidatePointsList =  candidatePoints.select("point", "grid_id").rdd.map(r => (r(0), r(1))).collect()
     val cp_list = candidatePointsList.toList
-    utils.printList(cp_list)
+//    utils.printList(cp_list)
 
     val dominanceDf = candidatePoints.mapPartitions(iterator => {
 
@@ -84,7 +99,7 @@ class TaskTwoGrid extends Serializable{
       res
     }).select($"_1".as("point"), $"_2".as("cell_id"), $"_3".as("score"))
 
-    dominanceDf.sort(desc("_3")).limit(10).collect()
+    Tuple1(dominanceDf.sort(desc("_3")).limit(10).collect(), count_deleted_points)
 
   }
 

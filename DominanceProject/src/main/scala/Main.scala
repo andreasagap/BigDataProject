@@ -1,4 +1,4 @@
-import java.io.FileWriter
+import java.io.{File, FileWriter}
 import java.util.concurrent.TimeUnit
 
 import org.apache.log4j.{Level, Logger}
@@ -10,12 +10,22 @@ import scala.collection.mutable
 
 object Main extends Serializable {
 
+  def getListOfFiles(dir: String):List[File] = {
+    val d = new File(dir)
+    if (d.exists && d.isDirectory) {
+      d.listFiles.filter(_.isFile).toList
+    } else {
+      List[File]()
+    }
+  }
+
   def main(args: Array[String]): Unit = {
     Logger.getLogger("org").setLevel(Level.OFF)
     val topK = 5
     //Logger.getLogger("akka").setLevel(Level.OFF)
-    val listPath = Array("anticorrelated_dim_2_nsamples_5000.txt", "anticorrelated_dim_3_nsamples_5000.txt",
-      "anticorrelated_dim_5_nsamples_5000.txt", "anticorrelated_dim_5_nsamples_100000.txt")
+
+    val listPath = getListOfFiles("Datasets/FinalDatasets/" ).map(_.getName).toList
+    print(listPath)
     val sc = new SparkContext("local[2]", "DominanceProject")
     val ss = SparkSession.builder().appName("DataSet Test").master("local[2]").getOrCreate()
 
@@ -26,8 +36,13 @@ object Main extends Serializable {
     val task3 = new TaskThree()
     import ss.implicits._
     for ( pathTxt <- listPath ) {
+
+//      val file_str = pathTxt.toString
+//      print(file_str)
+
       val pathSplitArray = pathTxt.split("_")
-      val path = "Datasets\\\\" + pathTxt
+
+      val path = "Datasets/FinalDatasets/" + pathTxt
       val tuple = utils.preprocessing(sc, path, ss)
       val result = tuple._1
       val dimensions = tuple._2
@@ -62,15 +77,17 @@ object Main extends Serializable {
 
       fwtask2.write("-------------------TASK 2(GRID)-------------------\n")
       val startTask2 = System.nanoTime()
-      val dominanceTopKArray = task2grid.start(pointsDF, ss, dimensions, topK, utils)
+      val task2_results = task2grid.start(pointsDF, ss, dimensions, topK, utils)
+      val dominanceTopKArray = task2_results._1._1
+      val deletedPointsCount = task2_results._1._2
       val endTask2 = System.nanoTime()
       try {
         fwtask2.write("Dims: "+pathSplitArray(2) + " Samples: " + pathSplitArray(4).split('.')(0)+"\n")
         fwtask2.write("Time to find Top-K Dominant: " + TimeUnit.SECONDS.convert(endTask2 - startTask2, TimeUnit.NANOSECONDS) + "s\n")
         dominanceTopKArray.foreach(row=>{
-          print(row)
-          fwtask2.write("Point: "+row.get(0) + ", Score: " + row.get(2)+"\n")
+          fwtask2.write("Point: "+row.getAs[mutable.WrappedArray[Double]](0).toArray.mkString("[", ",", "]") + ", Score: " + row.get(2)+"\n")
         })
+        fwtask2.write("# of deleted points: "+ deletedPointsCount +"\n")
 
         fwtask2.write("---------End---------\n")
       }
