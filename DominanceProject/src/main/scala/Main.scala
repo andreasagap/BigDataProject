@@ -72,7 +72,6 @@ object Main extends Serializable {
       println("Time to find skyline: " + TimeUnit.SECONDS.convert(endSkyline - startSkyline, TimeUnit.NANOSECONDS) + "s")
 
 
-
       val fwtask2 = new FileWriter("Task2results_"+pathSplitArray(0)+".txt", true)
 
       val startTask2 = System.nanoTime()
@@ -100,7 +99,8 @@ object Main extends Serializable {
         val task3_results = task3.start(arraySkyline,pointsDF.toDF(),ss,topK,utils)
         val endTask3=System.nanoTime()
       try {
-        fwtask3.write("----------TASK 3----------\n")
+        fwtask3.write("\n----------TASK 3----------\n")
+        fwtask3.write("Dims: "+pathSplitArray(2) + " Samples: " + pathSplitArray(4).split('.')(0)+"\n")
 
         task3_results.foreach(row=>{
           fwtask3.write("Point: "+row.get(0) + ", Score: " + row.get(1)+"\n")

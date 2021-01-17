@@ -1,0 +1,240 @@
+-------------------TASK 2(GRID)-------------------
+Dims: 2 Samples: 100
+Time to find Top-K Dominant: 9s
+Point: [0.0,0.0], Score: 96
+Point: [0.0,0.0], Score: 96
+Point: [0.0,0.0], Score: 96
+Point: [0.0,0.0], Score: 96
+Point: [0.02,0.0], Score: 94
+Point: [0.07,0.0], Score: 92
+Point: [0.04,0.08], Score: 91
+Point: [0.11,0.0], Score: 90
+Point: [0.0,0.13], Score: 89
+Point: [0.14,0.14], Score: 86
+# of deleted points: 76
+---------End---------
+-------------------TASK 2(GRID)-------------------
+Dims: 2 Samples: 1000
+Time to find Top-K Dominant: 16s
+Point: [0.0,0.0], Score: 997
+Point: [0.0,0.0], Score: 997
+Point: [0.0,0.0], Score: 997
+Point: [0.02,0.01], Score: 994
+Point: [0.0,0.02], Score: 994
+Point: [0.03,0.02], Score: 993
+Point: [0.05,0.04], Score: 991
+Point: [0.08,0.0], Score: 991
+Point: [0.07,0.07], Score: 988
+Point: [0.12,0.04], Score: 987
+# of deleted points: 879
+---------End---------
+-------------------TASK 2(GRID)-------------------
+Dims: 2 Samples: 10000
+Time to find Top-K Dominant: 20s
+Point: [0.0,0.0], Score: 9994
+Point: [0.0,0.0], Score: 9994
+Point: [0.0,0.0], Score: 9994
+Point: [0.0,0.0], Score: 9994
+Point: [0.0,0.0], Score: 9994
+Point: [0.0,0.0], Score: 9994
+Point: [0.0,0.02], Score: 9983
+Point: [0.0,0.03], Score: 9981
+Point: [0.0,0.04], Score: 9975
+Point: [0.04,0.0], Score: 9972
+# of deleted points: 8940
+---------End---------
+-------------------TASK 2(GRID)-------------------
+Dims: 2 Samples: 100000
+Time to find Top-K Dominant: 22s
+Point: [0.0,0.0], Score: 99994
+Point: [0.0,0.0], Score: 99994
+Point: [0.0,0.0], Score: 99994
+Point: [0.0,0.0], Score: 99994
+Point: [0.0,0.0], Score: 99994
+Point: [0.0,0.0], Score: 99994
+Point: [0.0,0.03], Score: 99986
+Point: [0.02,0.0], Score: 99984
+Point: [0.03,0.0], Score: 99983
+Point: [0.0,0.04], Score: 99979
+# of deleted points: 96280
+---------End---------
+-------------------TASK 2(GRID)-------------------
+Dims: 3 Samples: 100
+Time to find Top-K Dominant: 10s
+Point: [0.0,0.0,0.0], Score: 97
+Point: [0.0,0.0,0.0], Score: 97
+Point: [0.0,0.0,0.0], Score: 97
+Point: [0.0,0.0,0.05], Score: 93
+Point: [0.0,0.0,0.13], Score: 92
+Point: [0.04,0.0,0.0], Score: 92
+Point: [0.04,0.09,0.0], Score: 90
+Point: [0.0,0.08,0.22], Score: 89
+Point: [0.08,0.08,0.18], Score: 87
+Point: [0.05,0.24,0.19], Score: 80
+# of deleted points: 69
+---------End---------
+-------------------TASK 2(GRID)-------------------
+Dims: 3 Samples: 1000
+Time to find Top-K Dominant: 20s
+Point: [0.0,0.0,0.0], Score: 997
+Point: [0.0,0.0,0.0], Score: 997
+Point: [0.0,0.0,0.0], Score: 997
+Point: [0.0,0.0,0.06], Score: 994
+Point: [0.0,0.0,0.06], Score: 994
+Point: [0.06,0.0,0.13], Score: 990
+Point: [0.0,0.04,0.0], Score: 989
+Point: [0.05,0.09,0.16], Score: 980
+Point: [0.16,0.04,0.16], Score: 975
+Point: [0.15,0.08,0.18], Score: 973
+# of deleted points: 902
+---------End---------
+-------------------TASK 2(GRID)-------------------
+Dims: 3 Samples: 10000
+Time to find Top-K Dominant: 21s
+Point: [0.0,0.0,0.0], Score: 9995
+Point: [0.0,0.0,0.0], Score: 9995
+Point: [0.0,0.0,0.0], Score: 9995
+Point: [0.0,0.0,0.0], Score: 9995
+Point: [0.0,0.0,0.0], Score: 9995
+Point: [0.02,0.0,0.0], Score: 9990
+Point: [0.05,0.01,0.0], Score: 9983
+Point: [0.07,0.0,0.0], Score: 9982
+Point: [0.0,0.01,0.08], Score: 9980
+Point: [0.0,0.08,0.09], Score: 9976
+# of deleted points: 9516
+---------End---------
+-------------------TASK 2(GRID)-------------------
+Dims: 3 Samples: 100000
+Time to find Top-K Dominant: 24s
+Point: [0.0,0.0,0.0], Score: 99994
+Point: [0.0,0.0,0.0], Score: 99994
+Point: [0.0,0.0,0.0], Score: 99994
+Point: [0.0,0.0,0.0], Score: 99994
+Point: [0.0,0.0,0.0], Score: 99994
+Point: [0.0,0.0,0.0], Score: 99994
+Point: [0.04,0.0,0.0], Score: 99983
+Point: [0.0,0.05,0.01], Score: 99978
+Point: [0.06,0.05,0.0], Score: 99972
+Point: [0.0,0.04,0.03], Score: 99970
+# of deleted points: 95553
+---------End---------
+-------------------TASK 2(GRID)-------------------
+Dims: 4 Samples: 100
+Time to find Top-K Dominant: 10s
+Point: [0.0,0.0,0.0,0.0], Score: 98
+Point: [0.0,0.0,0.0,0.0], Score: 98
+Point: [0.02,0.0,0.01,0.0], Score: 95
+Point: [0.14,0.08,0.0,0.17], Score: 90
+Point: [0.01,0.12,0.0,0.18], Score: 90
+Point: [0.16,0.09,0.1,0.14], Score: 90
+Point: [0.1,0.16,0.2,0.17], Score: 86
+Point: [0.14,0.0,0.22,0.05], Score: 86
+Point: [0.17,0.15,0.25,0.21], Score: 84
+Point: [0.02,0.22,0.33,0.11], Score: 53
+# of deleted points: 81
+---------End---------
+-------------------TASK 2(GRID)-------------------
+Dims: 4 Samples: 1000
+Time to find Top-K Dominant: 20s
+Point: [0.0,0.0,0.0,0.0], Score: 995
+Point: [0.0,0.0,0.0,0.0], Score: 995
+Point: [0.0,0.0,0.0,0.0], Score: 995
+Point: [0.0,0.0,0.0,0.0], Score: 995
+Point: [0.0,0.0,0.0,0.0], Score: 995
+Point: [0.03,0.0,0.0,0.0], Score: 989
+Point: [0.03,0.04,0.0,0.0], Score: 983
+Point: [0.09,0.04,0.03,0.0], Score: 976
+Point: [0.0,0.03,0.03,0.05], Score: 973
+Point: [0.0,0.08,0.11,0.01], Score: 971
+# of deleted points: 797
+---------End---------
+-------------------TASK 2(GRID)-------------------
+Dims: 4 Samples: 10000
+Time to find Top-K Dominant: 23s
+Point: [0.0,0.0,0.0,0.0], Score: 9997
+Point: [0.0,0.0,0.0,0.0], Score: 9997
+Point: [0.0,0.0,0.0,0.0], Score: 9997
+Point: [0.0,0.01,0.0,0.0], Score: 9991
+Point: [0.01,0.01,0.04,0.0], Score: 9979
+Point: [0.03,0.06,0.0,0.02], Score: 9975
+Point: [0.0,0.0,0.06,0.0], Score: 9973
+Point: [0.06,0.08,0.03,0.0], Score: 9964
+Point: [0.06,0.01,0.03,0.07], Score: 9961
+Point: [0.03,0.09,0.02,0.01], Score: 9961
+# of deleted points: 8994
+---------End---------
+-------------------TASK 2(GRID)-------------------
+Dims: 4 Samples: 100000
+Time to find Top-K Dominant: 26s
+Point: [0.0,0.0,0.0,0.0], Score: 99994
+Point: [0.0,0.0,0.0,0.0], Score: 99994
+Point: [0.0,0.0,0.0,0.0], Score: 99994
+Point: [0.0,0.0,0.0,0.0], Score: 99994
+Point: [0.0,0.0,0.0,0.0], Score: 99994
+Point: [0.0,0.0,0.0,0.0], Score: 99994
+Point: [0.0,0.0,0.0,0.03], Score: 99985
+Point: [0.0,0.01,0.03,0.0], Score: 99979
+Point: [0.0,0.0,0.04,0.0], Score: 99978
+Point: [0.0,0.06,0.02,0.0], Score: 99968
+# of deleted points: 96063
+---------End---------
+-------------------TASK 2(GRID)-------------------
+Dims: 5 Samples: 100
+Time to find Top-K Dominant: 10s
+Point: [0.0,0.0,0.0,0.0,0.0], Score: 98
+Point: [0.0,0.0,0.0,0.0,0.0], Score: 98
+Point: [0.0,0.04,0.16,0.12,0.0], Score: 88
+Point: [0.13,0.18,0.19,0.07,0.18], Score: 84
+Point: [0.0,0.0,0.02,0.0,0.35], Score: 73
+Point: [0.23,0.21,0.24,0.18,0.26], Score: 71
+Point: [0.0,0.04,0.15,0.26,0.0], Score: 67
+Point: [0.22,0.23,0.29,0.23,0.21], Score: 60
+Point: [0.1,0.08,0.28,0.0,0.31], Score: 59
+Point: [0.42,0.3,0.0,0.0,0.2], Score: 57
+# of deleted points: 67
+---------End---------
+-------------------TASK 2(GRID)-------------------
+Dims: 5 Samples: 1000
+Time to find Top-K Dominant: 21s
+Point: [0.0,0.0,0.0,0.0,0.0], Score: 996
+Point: [0.0,0.0,0.0,0.0,0.0], Score: 996
+Point: [0.0,0.0,0.0,0.0,0.0], Score: 996
+Point: [0.0,0.0,0.0,0.0,0.0], Score: 996
+Point: [0.0,0.0,0.0,0.0,0.02], Score: 990
+Point: [0.0,0.0,0.0,0.08,0.0], Score: 988
+Point: [0.04,0.0,0.04,0.05,0.0], Score: 986
+Point: [0.03,0.07,0.07,0.03,0.09], Score: 979
+Point: [0.1,0.07,0.0,0.05,0.08], Score: 978
+Point: [0.07,0.1,0.07,0.07,0.13], Score: 973
+# of deleted points: 859
+---------End---------
+-------------------TASK 2(GRID)-------------------
+Dims: 5 Samples: 10000
+Time to find Top-K Dominant: 26s
+Point: [0.0,0.0,0.0,0.0,0.0], Score: 9997
+Point: [0.0,0.0,0.0,0.0,0.0], Score: 9997
+Point: [0.0,0.0,0.0,0.0,0.0], Score: 9997
+Point: [0.0,0.01,0.0,0.0,0.0], Score: 9994
+Point: [0.0,0.04,0.0,0.0,0.04], Score: 9989
+Point: [0.0,0.06,0.0,0.0,0.09], Score: 9972
+Point: [0.03,0.06,0.0,0.0,0.04], Score: 9971
+Point: [0.06,0.02,0.03,0.04,0.04], Score: 9968
+Point: [0.0,0.0,0.08,0.05,0.0], Score: 9963
+Point: [0.0,0.07,0.02,0.01,0.08], Score: 9963
+# of deleted points: 8672
+---------End---------
+-------------------TASK 2(GRID)-------------------
+Dims: 5 Samples: 100000
+Time to find Top-K Dominant: 33s
+Point: [0.0,0.0,0.0,0.0,0.0], Score: 99998
+Point: [0.0,0.0,0.0,0.0,0.0], Score: 99998
+Point: [0.0,0.01,0.0,0.0,0.0], Score: 99984
+Point: [0.0,0.0,0.0,0.0,0.02], Score: 99981
+Point: [0.0,0.0,0.0,0.05,0.0], Score: 99978
+Point: [0.04,0.0,0.0,0.0,0.02], Score: 99971
+Point: [0.08,0.0,0.0,0.0,0.0], Score: 99957
+Point: [0.0,0.0,0.04,0.03,0.03], Score: 99955
+Point: [0.06,0.02,0.0,0.03,0.02], Score: 99953
+Point: [0.0,0.07,0.0,0.0,0.01], Score: 99951
+# of deleted points: 94986
+---------End---------

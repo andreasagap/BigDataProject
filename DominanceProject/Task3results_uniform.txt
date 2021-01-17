@@ -1,0 +1,123 @@
+
+----------TASK 3----------
+Dims: 2 Samples: 100
+Point: 0.02,0.09, Score: 86
+Point: 0.1,0.08, Score: 81
+Point: 0.1,0.08, Score: 81
+Point: 0.01,0.26, Score: 75
+Point: 0.34,0.07, Score: 55
+Time to find Top-K Skyline: 0s
+----------TASK 3----------
+Dims: 2 Samples: 1000
+Point: 0.01,0.01, Score: 986
+Point: 0.19,0.0, Score: 815
+Point: 0.0,0.26, Score: 719
+Time to find Top-K Skyline: 1s
+----------TASK 3----------
+Dims: 2 Samples: 10000
+Point: 0.01,0.02, Score: 9827
+Point: 0.03,0.0, Score: 9760
+Point: 0.03,0.0, Score: 9760
+Point: 0.0,0.07, Score: 9360
+Time to find Top-K Skyline: 0s
+----------TASK 3----------
+Dims: 2 Samples: 100000
+Point: 0.0,0.0, Score: 99998
+Point: 0.0,0.0, Score: 99998
+Time to find Top-K Skyline: 3s
+----------TASK 3----------
+Dims: 3 Samples: 100
+Point: 0.27,0.14,0.3, Score: 50
+Point: 0.3,0.32,0.1, Score: 48
+Point: 0.02,0.14,0.48, Score: 45
+Point: 0.13,0.41,0.12, Score: 44
+Point: 0.37,0.31,0.18, Score: 41
+Time to find Top-K Skyline: 0s
+----------TASK 3----------
+Dims: 3 Samples: 1000
+Point: 0.01,0.08,0.07, Score: 863
+Point: 0.02,0.02,0.11, Score: 860
+Point: 0.09,0.04,0.1, Score: 788
+Point: 0.2,0.09,0.03, Score: 702
+Point: 0.06,0.29,0.04, Score: 655
+Time to find Top-K Skyline: 0s
+----------TASK 3----------
+Dims: 3 Samples: 10000
+Point: 0.03,0.04,0.06, Score: 8895
+Point: 0.07,0.03,0.03, Score: 8875
+Point: 0.03,0.07,0.04, Score: 8750
+Point: 0.03,0.11,0.03, Score: 8501
+Point: 0.05,0.11,0.02, Score: 8403
+Time to find Top-K Skyline: 0s
+----------TASK 3----------
+Dims: 3 Samples: 100000
+Point: 0.02,0.0,0.01, Score: 97938
+Point: 0.04,0.02,0.0, Score: 95145
+Point: 0.0,0.03,0.04, Score: 94036
+Point: 0.01,0.04,0.03, Score: 93602
+Point: 0.0,0.01,0.09, Score: 90999
+Time to find Top-K Skyline: 2s
+----------TASK 3----------
+Dims: 4 Samples: 100
+Point: 0.38,0.06,0.03,0.24, Score: 42
+Point: 0.25,0.3,0.2,0.17, Score: 38
+Point: 0.62,0.35,0.0,0.11, Score: 29
+Point: 0.21,0.62,0.05,0.15, Score: 29
+Point: 0.61,0.28,0.01,0.24, Score: 26
+Time to find Top-K Skyline: 0s
+----------TASK 3----------
+Dims: 4 Samples: 1000
+Point: 0.04,0.01,0.07,0.14, Score: 755
+Point: 0.01,0.16,0.04,0.16, Score: 660
+Point: 0.13,0.12,0.06,0.16, Score: 584
+Point: 0.05,0.1,0.2,0.12, Score: 581
+Point: 0.32,0.06,0.14,0.07, Score: 528
+Time to find Top-K Skyline: 0s
+----------TASK 3----------
+Dims: 4 Samples: 10000
+Point: 0.09,0.04,0.12,0.05, Score: 7478
+Point: 0.01,0.19,0.08,0.02, Score: 7389
+Point: 0.02,0.23,0.04,0.04, Score: 7087
+Point: 0.06,0.16,0.09,0.06, Score: 6890
+Point: 0.2,0.08,0.07,0.03, Score: 6772
+Time to find Top-K Skyline: 1s
+----------TASK 3----------
+Dims: 4 Samples: 100000
+Point: 0.0,0.05,0.02,0.02, Score: 92552
+Point: 0.03,0.04,0.02,0.04, Score: 89462
+Point: 0.05,0.03,0.0,0.11, Score: 83423
+Point: 0.02,0.07,0.01,0.1, Score: 82828
+Point: 0.05,0.01,0.07,0.08, Score: 82395
+Time to find Top-K Skyline: 3s
+----------TASK 3----------
+Dims: 5 Samples: 100
+Point: 0.3,0.17,0.13,0.59,0.05, Score: 22
+Point: 0.67,0.1,0.16,0.05,0.07, Score: 18
+Point: 0.4,0.47,0.06,0.41,0.4, Score: 17
+Point: 0.5,0.09,0.1,0.19,0.49, Score: 14
+Point: 0.37,0.41,0.26,0.34,0.4, Score: 14
+Time to find Top-K Skyline: 0s
+----------TASK 3----------
+Dims: 5 Samples: 1000
+Point: 0.09,0.08,0.03,0.29,0.04, Score: 561
+Point: 0.12,0.06,0.05,0.33,0.12, Score: 491
+Point: 0.1,0.14,0.33,0.04,0.08, Score: 480
+Point: 0.08,0.12,0.36,0.16,0.01, Score: 457
+Point: 0.16,0.15,0.03,0.21,0.29, Score: 386
+Time to find Top-K Skyline: 0s
+----------TASK 3----------
+Dims: 5 Samples: 10000
+Point: 0.01,0.28,0.16,0.01,0.05, Score: 5778
+Point: 0.36,0.03,0.0,0.12,0.11, Score: 5036
+Point: 0.26,0.18,0.03,0.11,0.1, Score: 4868
+Point: 0.17,0.12,0.05,0.17,0.18, Score: 4868
+Point: 0.2,0.11,0.08,0.01,0.27, Score: 4849
+Time to find Top-K Skyline: 1s
+----------TASK 3----------
+Dims: 5 Samples: 100000
+Point: 0.01,0.11,0.06,0.0,0.04, Score: 81460
+Point: 0.02,0.01,0.14,0.06,0.01, Score: 79757
+Point: 0.07,0.03,0.03,0.03,0.16, Score: 73416
+Point: 0.07,0.03,0.11,0.1,0.05, Score: 70790
+Point: 0.07,0.14,0.02,0.1,0.03, Score: 70573
+Time to find Top-K Skyline: 7s

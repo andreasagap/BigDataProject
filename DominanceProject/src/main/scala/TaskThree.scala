@@ -11,7 +11,7 @@ class TaskThree extends Serializable{
 
     import ss.implicits._
 
-    val calculator = new DominanceCalculator()
+    //val calculator = new DominanceCalculator()
     val skylineDF = skylineArray.toSeq.toDF("point")
 
 //    val skylineCount = skylineDF.union(pointsDF)
@@ -53,7 +53,7 @@ class TaskThree extends Serializable{
     // MAP PARTITION APPROACH
     val candidatePointsList =  pointsDF.rdd.map(r =>{
       val list = r.getAs[mutable.WrappedArray[Double]](0).toList
-      (list(0), list(1))
+      (list)
     }).collect()
 
     val cp_list = candidatePointsList.toList
@@ -74,9 +74,15 @@ class TaskThree extends Serializable{
     val finaldf = dominanceDf
           .sort(desc("score"))
 
-    finaldf.show(k)
+    //finaldf.show(k)
+    val sizeDf = finaldf.count()
+    if(sizeDf > k){
+      finaldf.take(k)
+    }
+    else{
+      finaldf.collect()
+    }
 
-    finaldf.take(k)
   }
 
 }

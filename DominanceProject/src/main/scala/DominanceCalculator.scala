@@ -1,7 +1,7 @@
 
 class DominanceCalculator extends Serializable {
   def isDominatedTask1(x: Array[Double], y:Array[Double]): Boolean = {
-    return isSmaller(x,y) & isSmallerEqual(x,y)
+    isSmaller(x,y) & isSmallerEqual(x,y)
   }
   def isDominatedTask2(row1: Array[Double], row2: Array[Double]) : Tuple1[(Array[Double], Int)]= {
     if (isSmaller (row1, row2) & isSmallerEqual (row1, row2) ) {
@@ -18,11 +18,12 @@ class DominanceCalculator extends Serializable {
     val size = x.length
     var flag = false
     var i = 0
+
     for (i <-0 until size) {
       if (x(i) < y(i))
         flag = true
     }
-    return flag
+    flag
   }
 
   def isSmallerEqual(x: Array[Double], y:Array[Double]):Boolean = {
