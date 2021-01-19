@@ -3,10 +3,9 @@ import org.apache.spark.SparkContext
 import org.apache.spark.sql.expressions.UserDefinedFunction
 import org.apache.spark.sql.{DataFrame, Row, SparkSession}
 import org.apache.spark.sql.functions.{array, col, concat_ws, count, desc, explode, lit, monotonically_increasing_id, row_number, size, udf, when}
-
 import scala.collection.mutable
 import scala.collection.mutable.ArrayBuffer
-import scala.util.control.Breaks.break
+import scala.util.control.Breaks._
 
 class TaskOne extends Serializable{
 
@@ -22,20 +21,23 @@ class TaskOne extends Serializable{
       }
 
       skyline+=pointsArray(0)
+
     pointsArray.foreach { row => {
         var isSkyline = true
         var j=0
-        while (j < skyline.length) {
-          if (calculator.isDominatedTask1(row, skyline(j))) {
-            skyline.remove(j)
-            j-=1
+        breakable {
+          while (j < skyline.length) {
+            if (calculator.isDominatedTask1(row, skyline(j))) {
+              skyline.remove(j)
+              j -= 1
 
+            }
+            else if (calculator.isDominatedTask1(skyline(j), row)) {
+              isSkyline = false
+              break()
+            }
+            j += 1
           }
-          else if (calculator.isDominatedTask1(skyline(j), row)) {
-            isSkyline = false
-            break()
-          }
-          j += 1
         }
         if (isSkyline) {
           skyline+=row

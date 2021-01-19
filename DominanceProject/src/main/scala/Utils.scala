@@ -1,6 +1,6 @@
 import org.apache.spark.SparkContext
 import org.apache.spark.sql.{DataFrame, Row, SparkSession}
-import org.apache.spark.sql.functions.{col, desc}
+import org.apache.spark.sql.functions.{asc, col, desc}
 
 import scala.collection.mutable
 import scala.collection.mutable.ArrayBuffer
@@ -20,7 +20,7 @@ class Utils extends Serializable{
     var result = newDf.select((0 until dimensions).map(i => $"points"(i).as(s"dim_$i")): _*)
 
     result = result.withColumn("SUM", result.columns.map(c => col(c)).reduce((c1, c2) => c1 + c2))
-      .sort(desc("SUM"))
+      .sort($"SUM".asc)
     (result,dimensions)
   }
 
