@@ -73,42 +73,42 @@ object Main extends Serializable {
       println("Time to find skyline: " + TimeUnit.SECONDS.convert(endSkyline - startSkyline, TimeUnit.NANOSECONDS) + "s")
 
 
-//      val fwtask2 = new FileWriter("Task2results_"+pathSplitArray(0)+".txt", true)
-//
-//      val startTask2 = System.nanoTime()
-//      val task2_results = task2grid.start(pointsDF, ss, dimensions, topK, utils)
-//      val dominanceTopKArray = task2_results._1._1
-//      val deletedPointsCount = task2_results._1._2
-//      val endTask2 = System.nanoTime()
-//      try {
-//        fwtask2.write("-------------------TASK 2(GRID)-------------------\n")
-//        fwtask2.write("Dims: "+pathSplitArray(2) + " Samples: " + pathSplitArray(4).split('.')(0)+"\n")
-//        fwtask2.write("Time to find Top-K Dominant: " + TimeUnit.SECONDS.convert(endTask2 - startTask2, TimeUnit.NANOSECONDS) + "s\n")
-//        dominanceTopKArray.foreach(row=>{
-//          fwtask2.write("Point: "+row.getAs[mutable.WrappedArray[Double]](0).toArray.mkString("[", ",", "]") + ", Score: " + row.get(2)+"\n")
-//        })
-//        fwtask2.write("# of deleted points: "+ deletedPointsCount +"\n")
-//
-//        fwtask2.write("---------End---------\n")
-//      }
-//      finally fwtask2.close()
-//
-//
-//      val fwtask3 = new FileWriter("Task3results_"+pathSplitArray(0)+".txt", true)
-//
-//        val startTask3=System.nanoTime()
-//        val task3_results = task3.start(arraySkyline,pointsDF.toDF(),ss,topK,utils)
-//        val endTask3=System.nanoTime()
-//      try {
-//        fwtask3.write("\n----------TASK 3----------\n")
-//        fwtask3.write("Dims: "+pathSplitArray(2) + " Samples: " + pathSplitArray(4).split('.')(0)+"\n")
-//
-//        task3_results.foreach(row=>{
-//          fwtask3.write("Point: "+row.get(0) + ", Score: " + row.get(1)+"\n")
-//        })
-//        fwtask3.write("Time to find Top-K Skyline: "+TimeUnit.SECONDS.convert(endTask3-startTask3,TimeUnit.NANOSECONDS)+"s")
-//      }
-//      finally fwtask3.close()
+      val fwtask2 = new FileWriter("Task2results_"+pathSplitArray(0)+".txt", true)
+
+      val startTask2 = System.nanoTime()
+      val task2_results = task2grid.start(pointsDF, ss, dimensions, topK, utils)
+      val dominanceTopKArray = task2_results._1._1
+      val deletedPointsCount = task2_results._1._2
+      val endTask2 = System.nanoTime()
+      try {
+        fwtask2.write("-------------------TASK 2(GRID)-------------------\n")
+        fwtask2.write("Dims: "+pathSplitArray(2) + " Samples: " + pathSplitArray(4).split('.')(0)+"\n")
+        fwtask2.write("Time to find Top-K Dominant: " + TimeUnit.SECONDS.convert(endTask2 - startTask2, TimeUnit.NANOSECONDS) + "s\n")
+        dominanceTopKArray.foreach(row=>{
+          fwtask2.write("Point: "+row.getAs[mutable.WrappedArray[Double]](0).toArray.mkString("[", ",", "]") + ", Score: " + row.get(2)+"\n")
+        })
+        fwtask2.write("# of deleted points: "+ deletedPointsCount +"\n")
+
+        fwtask2.write("---------End---------\n")
+      }
+      finally fwtask2.close()
+
+
+      val fwtask3 = new FileWriter("Task3results_"+pathSplitArray(0)+".txt", true)
+
+        val startTask3=System.nanoTime()
+        val task3_results = task3.start(arraySkyline,pointsDF.toDF(),ss,topK,utils)
+        val endTask3=System.nanoTime()
+      try {
+        fwtask3.write("\n----------TASK 3----------\n")
+        fwtask3.write("Dims: "+pathSplitArray(2) + " Samples: " + pathSplitArray(4).split('.')(0)+"\n")
+
+        task3_results.foreach(row=>{
+          fwtask3.write("Point: "+row.get(0) + ", Score: " + row.get(1)+"\n")
+        })
+        fwtask3.write("Time to find Top-K Skyline: "+TimeUnit.SECONDS.convert(endTask3-startTask3,TimeUnit.NANOSECONDS)+"s")
+      }
+      finally fwtask3.close()
     }
 
 
