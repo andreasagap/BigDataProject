@@ -5,7 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8e9add5b-e00b-465d-af65-e30ffe05065e" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/scala/TaskOne.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/TaskOne.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/TaskTwoGrid.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/TaskTwoGrid.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/Utils.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/Utils.scala" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

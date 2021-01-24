@@ -121,7 +121,7 @@ class Utils extends Serializable{
     bool
   }
 
-  def cell_bounds(cid : String, dim: Int, m: Map[String, Int]): ArrayBuffer[Int] = {
+  def get_cell_bounds(cid : String, dim: Int, m: Map[String, Int]): ArrayBuffer[Int] = {
     import scala.collection.mutable.ListBuffer
     var list_of = new ListBuffer[Int]()
 

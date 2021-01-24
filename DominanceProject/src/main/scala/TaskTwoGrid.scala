@@ -16,7 +16,7 @@ class TaskTwoGrid extends Serializable{
 
     import ss.implicits._
 
-    val grid_df = pointsDF.map(row => {
+    val gridDF = pointsDF.map(row => {
       val grid_id = utils.grid_assign(row, dimensions)
       Tuple1(row, grid_id)
 
@@ -25,7 +25,7 @@ class TaskTwoGrid extends Serializable{
     //grid_df.show()
 
 
-    val finaldf = grid_df
+    val finaldf = gridDF
       .groupBy("grid_id")
       .count()
       .sort(desc("count"))
@@ -37,19 +37,19 @@ class TaskTwoGrid extends Serializable{
    // println(count_map.toString())
 
 
-    val bounds_df = finaldf.map(row => {
+    val boundsDF = finaldf.map(row => {
       val grid_id = row(0).toString
-      val bound = utils.cell_bounds(grid_id, dimensions, count_map)
+      val bound = utils.get_cell_bounds(grid_id, dimensions, count_map)
       Tuple1(grid_id, bound)
     }).select($"_1._1".as("g_id"), $"_1._2"(0).as("lower"), $"_1._2"(1).as("upper"), $"_1._2"(2).as("gf"))
 
 
 //    bounds_df.show()
 
-    val pruned_grid = bounds_df.filter(bounds_df("gf") < k)
+    val pruned_grid = boundsDF.filter(boundsDF("gf") < k)
    // pruned_grid.show()
 
-    val deleted_cells = bounds_df.filter(bounds_df("gf") >= k)
+    val deleted_cells = boundsDF.filter(boundsDF("gf") >= k)
     //deleted_cells.show()
 
     val deleted_points_df = deleted_cells.map(row =>{
@@ -75,7 +75,7 @@ class TaskTwoGrid extends Serializable{
 
     val listOfPrunnedCells = cells_after_prunning.toList
 
-    val candidatePoints = grid_df.filter(grid_df("grid_id").isin(listOfPrunnedCells:_*))
+    val candidatePoints = gridDF.filter(gridDF("grid_id").isin(listOfPrunnedCells:_*))
 //    candidatePoints.show()
 
     val candidatePointsList =  candidatePoints.select("point", "grid_id").rdd.map(r => (r(0), r(1))).collect()
